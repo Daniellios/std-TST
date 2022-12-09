@@ -42,7 +42,7 @@ class Helper {
   }
 
   dropdownToggle() {
-    locationSelector.addEventListener("click", (e) => {
+    locationSelector.addEventListener("click", () => {
       locationDropdown.classList.toggle("hidden");
     });
   }
@@ -57,10 +57,14 @@ class App {
 
   init() {
     this.getData();
+    this.initUtils();
+    this.makeLocationRequest();
+  }
+
+  initUtils() {
     this.handleSearch();
     this.deleteChoseItem();
     this.clearSearch();
-    this.makeLocationRequest();
   }
 
   async getData() {
@@ -80,7 +84,7 @@ class App {
   }
 
   clearSearch() {
-    clearSearchBtn.addEventListener("click", (e) => {
+    clearSearchBtn.addEventListener("click", () => {
       this.chosenList = [];
       citySearch.value = "";
       clearSearchBtn.classList.remove("active");
@@ -91,10 +95,16 @@ class App {
 
   makeLocationRequest() {
     saveBtn.addEventListener("click", () => {
-      postData(API_URL, { data: this.chosenList }).then((data) => {
-        this.chosenList = [];
-        this.createChosenList();
-      });
+      this.chosenList = [];
+      this.createChosenList();
+
+      // ОТПРАВИТЬ ВЫБРАННЫЕ ГОРОДА
+      console.log(
+        postData(API_URL, { data: this.chosenList }).then((res) => {
+          this.chosenList = [];
+          this.createChosenList();
+        })
+      );
     });
   }
 
