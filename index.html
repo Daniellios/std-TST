@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- General meta tags needed-->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Needed for responsive design -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- If you want custom browser colors on mobile -->
+    <meta name="theme-color" content="#1843c1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1843c1" />
+
+    <title>СТУДИКА</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="dist/style.css?cb=1670570506353" />
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <!-- HEADER TOP -->
+        <div class="header__top">
+          <div class="header__top-location">
+            <span class="header__top-location_logo img_wrapper">
+              <img src="./app/assets/logo.png" alt="STUDIKA LOGO" />
+            </span>
+
+            <div
+              class="header__top-location header__top-location_wrap"
+              id="location_selector"
+            >
+              <span class="header__top-location_icon img_wrapper">
+                <img src="./app/assets/location.png" alt="location logo" />
+              </span>
+
+              <p class="header__top-location_city">Москва</p>
+            </div>
+
+            <!-- DROPDOWN MENU START -->
+            <div
+              class="header__top-dropdown hidden"
+              id="location-dropdown-menu"
+            >
+              <input
+                type="text"
+                class="header__top-dropdown_input"
+                id="dropdown-search"
+                placeholder="Регион, город, населенный пункт"
+              />
+
+              <button class="clear inactive">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="#a7a7a7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M17.25 17.25 6.75 6.75"></path>
+                  <path d="m17.25 6.75-10.5 10.5"></path>
+                </svg>
+              </button>
+
+              <!-- CHOSEN LIST -->
+              <div class="header__top-dropdown_chosen-list"></div>
+
+              <!-- LOCATIONS LIST -->
+              <div class="header__top-dropdown_list-wrap">
+                <div class="header__top-dropdown_list">
+                  <p class="loading inactive">Загрузка</p>
+                </div>
+              </div>
+
+              <button class="btn btn_save header__top-dropdown_button">
+                СОХРАНИТЬ
+              </button>
+            </div>
+            <!-- DROPDOWN MENU END-->
+
+            <span class="header__top-location_menu img_wrapper">
+              <img src="./app/assets/menu.png" alt="menu icon" />
+            </span>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="header__top-search">
+            <span class="header__top-search-icon img_wrapper">
+              <img src="./app//assets//search.png" alt="search icon" />
+            </span>
+
+            <input
+              type="text"
+              class="header__top-search-input"
+              placeholder="Учебное заведение, специальность или профессия"
+            />
+          </div>
+
+          <div class="header__top-account">
+            <div class="header__top-account-likes">
+              <span class="header__top-heart-icon img_wrapper">
+                <img src="./app//assets//Heart.png" alt="heart icon" />
+              </span>
+              <p>1</p>
+            </div>
+            <div class="header__top-account-profile">
+              <p>Екатерина</p>
+              <span class="img_wrapper">
+                <img src="./app//assets//avatar.png" alt="profile avatar" />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HEADER BOTTOM -->
+        <div class="header__bottom">
+          <ul class="header__links header__bottom_fade">
+            <li><a href="#">Вузы</a></li>
+            <li><a href="#">Колледжи</a></li>
+            <li><a href="#">Техникумы</a></li>
+            <li><a href="#">Училища</a></li>
+            <li><a href="#">Специальности</a></li>
+            <li><a href="#">Профессии</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Учебным заведениям</a></li>
+            <li><a href="#">Тест на профориентацию</a></li>
+          </ul>
+          <span class="header__arrow img_wrapper">
+            <img src="./app/assets/arrow.png" alt="right arrow icon" />
+          </span>
+        </div>
+      </header>
+
+      <!-- MENU -->
+      <div class="mobile-menu"></div>
+    </main>
+
+    <!-- JavaScript File -->
+    <script src="dist/all.js?cb=1670570506353"></script>
+  </body>
+</html>
