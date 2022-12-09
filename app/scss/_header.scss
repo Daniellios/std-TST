@@ -55,74 +55,6 @@
   }
 }
 
-.header__bottom {
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  &_fade {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  &_fade::after {
-    content: "";
-    height: 100%;
-    width: 60px;
-    display: block;
-    position: absolute;
-    right: 1rem;
-    background: rgba(255, 255, 255, 0.932);
-    background: -moz-linear-gradient(
-      right,
-      rgba(255, 255, 255) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background: -webkit-gradient(
-      right top,
-      left top,
-      color-stop(0%, rgb(255, 255, 255)),
-      color-stop(100%, rgba(255, 255, 255, 0))
-    );
-    background: -webkit-linear-gradient(
-      right,
-      rgba(255, 255, 255, 0.932) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background: -o-linear-gradient(
-      right,
-      rgba(255, 255, 255, 0.932) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background: -ms-linear-gradient(
-      left,
-      rgba(255, 255, 255, 0.932) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0.932) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-}
-
-.header__links {
-  width: 100%;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 1rem;
-}
-
-.header__arrow {
-  position: absolute;
-  right: 0;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 .header__top-search {
   display: flex;
   position: relative;
@@ -298,9 +230,77 @@
   color: $gray;
 }
 
-.menu {
+// ------------------- HEADER__BOTTOM -------------------
+
+.header__bottom {
   display: flex;
+  align-items: center;
+  position: relative;
+
+  &_fade {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &_fade::after {
+    content: "";
+    height: 100%;
+    width: 60px;
+    display: block;
+    position: absolute;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.932);
+    background: -moz-linear-gradient(
+      right,
+      rgba(255, 255, 255) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-gradient(
+      right top,
+      left top,
+      color-stop(0%, rgb(255, 255, 255)),
+      color-stop(100%, rgba(255, 255, 255, 0))
+    );
+    background: -webkit-linear-gradient(
+      right,
+      rgba(255, 255, 255, 0.932) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -o-linear-gradient(
+      right,
+      rgba(255, 255, 255, 0.932) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -ms-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0.932) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.932) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 }
+
+.header__links {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.header__arrow {
+  position: absolute;
+  right: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// -------------------  UTILITIES -------------------
 
 .clear {
   position: absolute;
@@ -336,6 +336,8 @@
     display: block;
   }
 }
+
+// -------------------  QUERRIES -------------------
 
 @media #{$mq-1000-down} {
   .header {

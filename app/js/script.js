@@ -37,7 +37,15 @@ async function postData(url = "", data = {}) {
 class Helper {
   constructor() {}
 
-  initHelpers() {}
+  initHelpers() {
+    this.dropdownToggle();
+  }
+
+  dropdownToggle() {
+    locationSelector.addEventListener("click", (e) => {
+      locationDropdown.classList.toggle("hidden");
+    });
+  }
 }
 
 class App {
@@ -48,7 +56,6 @@ class App {
   constructor() {}
 
   init() {
-    this.dropdownToggle();
     this.getData();
     this.handleSearch();
     this.deleteChoseItem();
@@ -72,15 +79,8 @@ class App {
     locationList.append(...this.createDropdownList(this.areasList));
   }
 
-  dropdownToggle() {
-    locationSelector.addEventListener("click", (e) => {
-      locationDropdown.classList.toggle("hidden");
-    });
-  }
-
   clearSearch() {
     clearSearchBtn.addEventListener("click", (e) => {
-      console.log("here");
       this.chosenList = [];
       citySearch.value = "";
       clearSearchBtn.classList.remove("active");
@@ -140,29 +140,29 @@ class App {
     });
   }
 
-  createDropdownList(list) {
-    return list.map((info) => {
-      let item = this.createDropdownItem(info);
+  createDropdownList(areasList) {
+    return areasList.map((state) => {
+      let item = this.createDropdownItem(state);
       return item;
     });
   }
 
-  createDropdownItem(info) {
+  createDropdownItem(state) {
     let pCity = document.createElement("p");
     let pState = document.createElement("p");
     let locItem = document.createElement("div");
     pCity.classList.add("header__top-dropdown_list_item_city");
     pState.classList.add("header__top-dropdown_list_item_state");
     locItem.classList.add("header__top-dropdown_list_item");
-    if (info.cityName) {
-      pState.innerHTML = `${info.stateName}`;
-      pCity.innerHTML = `${info.cityName}`;
-      locItem.dataset.id = info.id;
+    if (state.cityName) {
+      pState.innerHTML = `${state.stateName}`;
+      pCity.innerHTML = `${state.cityName}`;
+      locItem.dataset.id = state.id;
       locItem.appendChild(pCity);
       locItem.appendChild(pState);
     } else {
-      pCity.innerHTML = `${info.stateName}`;
-      locItem.dataset.id = info.id;
+      pCity.innerHTML = `${state.stateName}`;
+      locItem.dataset.id = state.id;
       locItem.appendChild(pCity);
     }
     locItem.addEventListener("click", (e) => {
@@ -223,5 +223,7 @@ class App {
 }
 
 // Instantiating the global app object
+const helpers = new Helper();
 const app = new App();
+helpers.initHelpers();
 app.init();
